@@ -1,0 +1,6 @@
+Se presenta un desarrollo basico completo en Packet Tracer realizado en modo grafico.
+Notar que al mismo tiempo que se agregan comandos en el modo grafico, al pie nos indica como seria con comandos de linea.
+
+Una vez completo y funcionando realizar nuevamente pero con interfaz de texto CLI para acostumbrarnos a esa forma de ingresar datos
+
+Tambien puede hacerlo con el simulador BOSON NETSIM que ademas tiene la ayuda del help.

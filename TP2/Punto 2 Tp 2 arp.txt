@@ -1,0 +1,47 @@
+Punto 2 Tp 2 arp
+
+Interfaz: 192.168.0.10 --- 0xa   // dirección del propio host
+  Dirección de Internet          Dirección física      Tipo
+  192.168.0.1           f0-81-75-32-21-89     dinámico      // Gateway para entrar en el router y mandar hacia afuera de la red local 
+  192.168.0.255         ff-ff-ff-ff-ff-ff     estático     // dirección Broadcast( difusión ) de la propia red local
+  224.0.0.22            01-00-5e-00-00-16     estático     // Dirección reservada para multidifusión ( Dirección clase D). Internet
+  224.0.0.251           01-00-5e-00-00-fb     estático      
+  224.0.0.252           01-00-5e-00-00-fc     estático
+  239.255.255.250       01-00-5e-7f-ff-fa     estático
+  255.255.255.255       ff-ff-ff-ff-ff-ff     estático      //Reservado para la dirección de destino de "difusión limitada". Subred. 
+
+
+¿Contiene el mensaje pedido ARP la dirección IP del Origen? 
+
+si, de hecho en la estructura del encabezado figuran esos campos como Sender HA y Sender IP. En el proceso de solictar la dirección MAC de la máquina referenciada con el Ip correspondiente
+lo que sucede es que si bien la máquina con la Ip envía su propia dirección MAC en respuesta al mensaje arp emitodo por el host emisor al mismo tiempo la máquuina recepctora guarda la dirección MAC e Ip de la máquina emisora para ya tenerla en memoria al momento de necesitar enviarle mensajes. 
+
+El primer y segundo paquete ARP del caso de estudio corresponde al pedido de ARP enviado 
+por el PC que corre WireShark y la respuesta ARP correspondiente. Pero hay otro computador 
+en la red, como se indica en el paquete 6 – otra solicitud ARP. ¿Por qué no tiene respuesta?
+
+Respuesta 1
+
+En principio lo que se puede observar es que el paquete 6 es otro broadcast el cual se emitido desde el host 192.168.1.104 y el se encuentra solicitando la dirección MAC de la maquina que tenga asociada la dire ip 192.168.1.117, tal mensaje puede encontrarse sin respuesta simplemente por que no hay un host que responda a esa dirección ip solicitada. //Podemos asegurarnos de esto ya que si bien otra opción podría ser de que no estemos viendo el tráfico total de la red, cuando vamos al menú/ Captura/ opciones podemos observar que está seleccionado el modo promiscuo en la red que estamos viendo y por tal motivo eso significa que se muestra todo el tráfico de la misma. //
+
+Respuesta 2
+
+La otra opción es que simplemente sea un request que llega por broadcast a nuestro host y como simplemente no coincide la dirección Ip con la que solicita el arq no se responde y ya. 
+
+
+
+1. ¿Cuál es el comando que permite el ingreso manual de resoluciones de IP en MAC en 
+el cache ARP? ¿Qué pasaría si por error se ingresa la IP correcta con la MAC 
+incorrecta?
+
+
+ > arp -s 157.55.85.212   00-aa-00-62-c6-09 .... Agrega una entrada estática
+
+Con este comando arp -s más la dirección ip especificada en el decimal y la dirección MAC descrita en hexadecimal se puede agregar una dirección de manera estática en la tabla. 
+En caso de que la dirección ip no coincida con la dirección física lo que sucedería es que no se podrían enviar los paquetes ya que sería erronea la dirección final. También podría resultar de que no lleguen al destino correcto. En cualquier caso generaría un funcionamiento incorrecto en la comunicación. 
+
+¿Cuál es el tiempo que permanece un dato cargado en el cache ARP? Indique el método 
+usado para contestar esta pregunta
+
+
+El tiempo puede variar según la configuración de cada sistema y red, sin embagro existe un cierto estandar / convenio que establece que el tiempo de vida de una entrada en la tabla de cahce del arp suele ser de 20 minutos aproximadamente. Esto es así para evitar que la misma guarde información no necesaria ya que hay que recordar que las memorias cache tienen como finalidad tener información a disposición de rápido acceso, pero por otro lado suele ser limitados los recursos asignadas a las mismas. 

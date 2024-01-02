@@ -1,0 +1,35 @@
+La capa de red proporciona servicios a la capa de transporte. Se puede basar en datagramas o en circuitos 
+virtuales. En ambos casos, su tarea principal es enrutar paquetes de la fuente al destino. En las redes de 
+datagramas, se toma una decisión de enrutamiento en cada paquete; y en las de circuitos virtuales se toma 
+al momento de establecer el circuito.
+En las redes de computadoras se utilizan muchos algoritmos de enrutamiento. La inundación es un 
+algoritmo simple para enviar un paquete a lo largo de todas las rutas. La mayoría de los algoritmos bus-
+can la ruta más corta y se adaptan a los cambios en la topología de la red. Los principales algoritmos son 
+el enrutamiento por vector de distancia y el enrutamiento de estado del enlace. La mayoría de las redes 
+actuales usan uno de estos dos algoritmos. Otros tópicos de enrutamiento importantes son el uso de la 
+jerarquía en redes extensas, el enrutamiento para hosts móviles, y los enrutamientos de difusión, multidi-
+fusión y anycast.
+Las redes se pueden congestionar con facilidad, lo cual aumenta el retardo y la pérdida de paquetes. 
+Para de evitar la congestión, los diseñadores de redes diseñan la red de modo que tenga suficiente capaci-
+dad, que seleccione las rutas descongestionadas, se rehuse a aceptar más tráfico que indique a las fuentes 
+que reduzcan su velocidad y que se desprenda de la carga.
+El siguiente paso que va más allá de sólo tratar con la congestión es realmente intentar alcanzar una 
+calidad de servicio prometida. Algunas aplicaciones se preocupan más por la velocidad de transmisión 
+real, mientras que otras se preocupan más por el retardo y la variación de éste. Los métodos que se 
+pueden utilizar para proporcionarr distintas calidades de servicio incluyen una combinación del modelado 
+de tráfico, la reservación de recursos en los enrutadores y el control de admisión. Entre los métodos que 
+se han diseñado para una buena calidad del servicio se encuentran los servicios integrados de la IETF 
+(incluyendo RSVP) y los servicios diferenciados.
+Las redes difieren de varias maneras, por lo que cuando se interconectan múltiples redes pueden 
+ocurrir problemas. Cuando las distintas redes tienen diferentes tamaños máximos de paquete, tal vez se 
+requiera una fragmentación. Las distintas redes pueden ejecutar diferentes protocolos de enrutamiento  
+en forma interna, pero necesitan ejecutar un protocolo común en el exterior. Algunas veces los problemas 
+se pueden refinar mediante la tunelización de un paquete a través de una red hostil, pero si las redes de 
+origen y de destino son diferentes, este método falla.
+Internet posee una extensa variedad de protocolos relacionados con la capa de red. Éstos incluyen 
+el protocolo de datagramas IP y los protocolos de control asociados como ICMP, ARP y DHCP. Hay un 
+protocolo orientado a conexión llamado MPLS, el cual transporta paquetes IP a través de algunas redes. 
+Uno de los principales protocolos de enrutamiento que se utilizan dentro de las redes es OSPF; el protocolo 
+de enrutamiento que se utiliza a través de varias redes es BGP. Internet se está́ quedando rápidamente sin 
+direcciones IP, por lo que se ha desarrollado una versión nueva de IP, conocida como IPv6, pero se está 
+implementando con mucha lentitud.

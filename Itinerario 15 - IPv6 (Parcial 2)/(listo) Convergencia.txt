@@ -1,0 +1,15 @@
+El concepto de "vector-distancia" se refiere a uno de los algoritmos de enrutamiento utilizados en redes de computadoras, específicamente en el contexto del enrutamiento por vector de distancia. Este algoritmo se utiliza para determinar la mejor ruta para la transmisión de datos en una red, y su objetivo es encontrar la ruta más corta o eficiente para alcanzar un destino.
+
+El problema del bucle infinito, al que te refieres, es un desafío común en los algoritmos de enrutamiento por vector de distancia. Cuando un router se cae o una ruta se vuelve inaccesible, los routers vecinos deben actualizar sus tablas de enrutamiento para reflejar este cambio. Sin embargo, esto puede dar lugar a bucles infinitos, donde los routers continúan enviándose información incorrecta o desactualizada.
+
+Para evitar bucles infinitos, el algoritmo de vector-distancia utiliza varias soluciones:
+
+1. **División de horizonte:** En la técnica de "división de horizonte", un router no anuncia información de ruta sobre una ruta que ha perdido. Esto significa que un router no informa a sus vecinos sobre rutas a través de sí mismo que ya no están disponibles.
+
+2. **Conteo a infinito:** En lugar de transmitir información de ruta infinitamente, los routers utilizan un número máximo, que se considera "infinito", para limitar la propagación de rutas inaccesibles. Cuando un router no puede alcanzar una red, asigna un valor de "infinito" a esa ruta en su tabla de enrutamiento. Los routers vecinos propagan esta información, pero con una métrica incremental, y si la métrica supera un umbral, se considera inalcanzable.
+
+3. **Temporizador de espera:** Los routers también pueden utilizar temporizadores de espera para controlar la actualización de las rutas. Esto evita que los routers actualicen sus tablas de enrutamiento en exceso y contribuyan a bucles infinitos. Los temporizadores de espera permiten que los routers esperen un tiempo antes de actualizar sus tablas de enrutamiento después de una caída de enlace.
+
+Estas soluciones ayudan a prevenir bucles infinitos en algoritmos de enrutamiento por vector de distancia como el algoritmo de Bellman-Ford, que es la base de muchas implementaciones de enrutamiento por vector de distancia, como RIP (Protocolo de Información de Enrutamiento) y EIGRP (Protocolo de Enrutamiento de Gateway Interior Mejorado).
+
+Es importante recordar que, aunque estas soluciones ayudan a prevenir bucles infinitos, los algoritmos de enrutamiento por vector de distancia todavía tienen limitaciones y pueden ser menos eficientes en comparación con otros enfoques más modernos como el enrutamiento por estado de enlace (OSPF) y el enrutamiento por vector de distancia mejorado (EIGRP) que se utilizan en redes más grandes y complejas.

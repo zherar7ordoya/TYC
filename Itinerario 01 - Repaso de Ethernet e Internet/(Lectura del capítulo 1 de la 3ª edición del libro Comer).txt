@@ -1,0 +1,2 @@
+Una red de redes consiste en u n grupo de redes conectadas que actúan como un iodo coordinado. 
+La mayor ventaja de una red de redes es que proporciona interconexión universal y permite que grupos individuales utilicen cualquier hardware de red que satisfaga sus necesidades.

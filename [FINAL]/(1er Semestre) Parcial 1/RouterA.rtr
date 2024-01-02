@@ -1,0 +1,46 @@
+
+!
+Version 12.1
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname RouterA
+!
+!
+!
+ip subnet-zero
+!
+!
+!
+!
+interface Serial0
+ ip address 192.168.0.1 255.255.255.0
+ no ip directed-broadcast
+ clock rate 64000
+!
+interface Serial1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Ethernet0
+ ip address 10.0.0.1 255.0.0.0
+ no ip directed-broadcast
+!
+!
+ip classless
+no ip http server
+ip route 198.170.0.0 255.255.255.0 192.168.0.2
+ip route 100.0.0.0 255.0.0.0 192.168.0.2
+ip route 126.0.0.0 255.0.0.0 198.170.0.2
+!
+!
+line con 0
+ transport input none
+line aux 0
+line vty 0 4
+!
+no scheduler allocate
+end
+

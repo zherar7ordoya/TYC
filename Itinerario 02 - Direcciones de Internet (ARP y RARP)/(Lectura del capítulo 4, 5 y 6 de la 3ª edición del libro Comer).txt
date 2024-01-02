@@ -1,0 +1,3 @@
+4 -> Direcciones de Internet
+5 -> Transformación de direcciones Internet en dírecciones físicas (ARP)
+6 -> Determinación en el arranque de una dirección Internet (RARP) 

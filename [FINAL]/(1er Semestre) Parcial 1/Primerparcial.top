@@ -1,0 +1,96 @@
+[General]
+NumberOfRouters= 3
+NumberOfSwitches= 0
+NumberOfPCs= 3
+NumberOfConnectors= 5
+[Router1]
+Hostname=Router 1
+Devicename=RouterA
+Series=2600
+Model=2610
+Ethernet= 1
+FastEthernet= 0
+GigabitEthernet= 0
+Token= 0
+Serial= 2
+Bri= 0
+xpos= 6690
+ypos= 3030
+DCE=0/0
+[Router2]
+Hostname=Router 2
+Devicename=RouterB
+Series=2600
+Model=2610
+Ethernet= 1
+FastEthernet= 0
+GigabitEthernet= 0
+Token= 0
+Serial= 2
+Bri= 0
+xpos= 10575
+ypos= 3300
+[Router3]
+Hostname=Router 3
+Devicename=RouterC
+Series=2600
+Model=2610
+Ethernet= 1
+FastEthernet= 0
+GigabitEthernet= 0
+Token= 0
+Serial= 2
+Bri= 0
+xpos= 14100
+ypos= 3375
+DCE=0/0
+[PC1]
+Name=PC 1
+Devicename=PCA
+xpos= 6840
+ypos= 6840
+[PC2]
+Name=PC 2
+Devicename=PCB
+xpos= 10485
+ypos= 7215
+[PC3]
+Name=PC 3
+Devicename=PCC
+xpos= 14415
+ypos= 7155
+[Connector1]
+dev1name=Router 1
+dev2name=PC 1
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Ethernet 0
+caption=R1E0-PC2,E0
+[Connector2]
+dev1name=Router 2
+dev2name=PC 2
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Ethernet 0
+caption=R2E0-PC3,E0
+[Connector3]
+dev1name=Router 3
+dev2name=PC 3
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Ethernet 0
+caption=R3E0-PC4,E0
+[Connector4]
+dev1name=Router 1
+dev2name=Router 2
+dev1interface=Serial 0
+connectortype=Serial
+dev2interface=Serial 0
+caption=R1S0-R2S0
+[Connector5]
+dev1name=Router 2
+dev2name=Router 3
+dev1interface=Serial 1
+connectortype=Serial
+dev2interface=Serial 0
+caption=R2S1-R3S0

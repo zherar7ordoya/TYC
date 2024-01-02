@@ -1,0 +1,73 @@
+Dirección IP IPv4:  192.168.0.10
+Mascara de subred: 255.255.255.0
+Puerta determinada IPv4: 192.168.0.1
+
+
+Punto 2 
+
+Describir lo que vemos en el header del mensaje HTTP GET cuando solicitamos conectarnos a la pagina de la Uai 
+
+Primero Encabezado IP 
+
+Version = 4 
+HL = 20 Bytes
+
+Servicio Tipo = 0 ( default )
+
+Total Lenght = 755
+
+Ident = 0xbe44(48708)
+
+Flags = 0x2 ( Dont fragment ) 
+
+F Offset = 0
+
+TTL = 128
+Protocolo = TCP  (6)
+
+Headerchecksum = 0x91e6 ( validation disabled )
+
+source address = 192.168.0.10
+destination address = 200.32.31.7
+
+TCP 
+
+Source Port = 52522
+Destination port = 80
+
+Numero de secuencia = 1 
+Numero de secuencia ( raw ) = 2441346244
+
+Ack Numero 2213837766
+
+Header Lenght 20 bytes
+
+Not use 
+
+code bits
+
+Windows 513
+
+Checksum 0x0307
+
+urgent pointer = 0
+
+TCP Payload 715 bytes 
+
+Protocolos que aparecen en el listado 
+
+TCP Se usa en la capa de transporte y tiene como objetivo aportar una comunicación confiable y orientada a la comunicación. sirve tanto para poder identificar por medio del ip a la maquina dentro de la red como a la aplicación destino dentro de la misma por medio de los puertos del dispositivo el cual es el punto de acceso a la aplicación destino dentre de la máquina destino. Detecta errores también ya que usa el checksum y pide re transmisión en caso de encontrar errores. Controla el flujo de información para evitar la congestión. 
+UDP Es el protocolo de datagramas y se utiliza para trasnmitir la información de manera rápida y efectiva entre dispositivos de una red. Se usa en la capa de transporte. También se encarga de realizar la segmentación y reensamble de la información una vez que ha llegado a destino y se encarga de verificar que todo este correctamente ensablado nuevamente en la máquina destino. 
+HTTP sirve para conectar a la aplicación, en este caso el browser con el servidor web del cual requerimos el servicio. Se basa en transferencia de texto plano. 
+TLS v1.2 Es un protocolo de seguridad, 
+DNS protocolo de sistemas de nombre de dominios, UDP se usa también para consultar resolver nombres de dominio en direcciones IP 
+
+
+
+
+
+
+
+
+
+

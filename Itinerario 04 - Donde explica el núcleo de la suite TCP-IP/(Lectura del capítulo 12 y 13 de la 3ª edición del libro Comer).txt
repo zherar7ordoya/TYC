@@ -1,0 +1,8 @@
+XII  => Protocolo de datagrama de usuario (UDP)
+La mayor parle de los sistemas de computadoras permite que varios programas de aplicaciones se 
+ejecuten al mismo tiempo. Utilizando la jerga de los sistemas operativos, nos referimos a dicho 
+programa en ejecuci6n como un proceso. El protocolo de datagrama de usuario. UDP. distingue en- 
+tre muchos pmcesos dentro de una mQuina al permitir que los transmisores y los receptores agre- 
+guen números enteros de 16 bits, llamados números de puerto de protocolo, a cada mensaje UDP. 
+Los números de puerio identifican el origen y el destino. 
+

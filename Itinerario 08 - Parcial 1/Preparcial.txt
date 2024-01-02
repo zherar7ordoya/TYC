@@ -1,0 +1,12 @@
+
+EJERCICIO DE VLSM
+Se tienen 3 ruteadores en serie con una LAN cada uno.
+LAN1 => 3500 hosts
+LAN2 =>  630 hosts
+LAN3 =>   15 hosts
+Red Ethernet 140.140.0.0/16
+Red Serial   192.168.1.0/24
+Se pide la dirección de cada interfaz.
+Simular en Packet Tracer.
+
+=================================================
